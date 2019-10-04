@@ -1,0 +1,42 @@
+<div class='container'>
+    
+        <div class="form-group">
+            <label >Nombre de la pelicula</label>
+            <input type="text" [(ngModel)]="nombre">
+        </div>
+        <div class="form-group">
+            <label >cantidad de publico</label>
+            <input type="number" [(ngModel)]="cantidad">
+        </div>
+        <div class="form-group">
+                <label>Fecha de estreno</label>
+                <input type="date" min="1918-01-01"  max="2019-12-31" required [(ngModel)]="estreno">
+        </div>
+
+        <div class="form-group">
+            <label >Tipo</label>
+            <input type="text"  [(ngModel)]="tipo">
+        </div>  
+
+       <!--  <div>
+            <label for="">Tipo</label>
+
+            <select name="" id="">
+                <option value="terror">terror</option>
+                <option value=""></option>
+            </select>
+        </div> -->
+
+
+        <div>
+            <label for="">ACTOR</label>
+        <select name="estrellas" id="estrella" [(ngModel)]="estrella">
+            <option value="{{estrella.nombre}}" *ngFor="let estrella of estrellas">{{estrella.nombre}}</option>
+        </select>
+        </div>  
+
+        <button (click)="agregar()">Agregar</button>
+    
+</div>
+<script>document.getElementById('formGroupExampleInput2').setAttribute('min', Date('NOW'));
+        console.log(Date('NOW'))</script>
